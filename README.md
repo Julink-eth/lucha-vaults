@@ -59,7 +59,7 @@ Once the LP tokens have been approved you can call either :
 ```solidity
 function deposit(uint256 _amount)
 
-depositAll()
+function depositAll()
 ```
 
 Once the LP tokens have been deposited, they are automatically transferred to the vault's strategy and staked in the staking reward contract.
