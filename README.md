@@ -48,3 +48,42 @@ npx hardhat run scripts/deploy.ts --network matic
 ```
 
 This will deploy the strategy and vault deployers and create a strategy and a vault from those deployers right after.
+
+# Interact with the vault
+
+## Deposit and withdraw
+
+A user will need to deposit its LP tokens to the vault contract.
+Once the LP tokens have been approved you can call either :
+
+```solidity
+function deposit(uint256 _amount)
+
+depositAll()
+```
+
+Once the LP tokens have been deposited, they are automatically transferred to the vault's strategy and staked in the staking reward contract.
+You can check the balance of the staked token for a user using the formula (Using the BigNumber web3 library) :
+
+```javascript
+let userLPStaked = vaultContract
+    .getRatio()
+    .times(vaultContract.getTokensStaked(userAddr))
+    .div(1e18);
+```
+
+To withdraw the LP tokens you have to use :
+
+```solidity
+function withdrawAll()
+```
+
+## Harvest to compound the interest generated
+
+The generated interests can be auto compounded into more LPs for the vault thanks to the function in the strategy contract :
+
+```solidity
+function harvest()
+```
+
+Anyone can call this function but it will be called periodically by the Chainlink keepers to make sure those interests are compounded.
