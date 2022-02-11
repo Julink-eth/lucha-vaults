@@ -4,12 +4,12 @@ You'll also have to add a .env file with your own keys, the .env.example contain
 
 # Smart contract addresses already deployed
 
-Cometh Farm WMATIC/LUCHA
--Strategy : 0x8e9d261FB991935917cbcb0945168908461419A7
+Cometh Farm WMATIC/LUCHA  
+-Strategy : 0x8e9d261FB991935917cbcb0945168908461419A7  
 -Vault : 0x9C59E595CbA741DfCd4C66743652afFfB059c258
 
-Cometh Farm MUST/LUCHA
--Strategy : 0x6C57Bc7eEC2144Eb9ab6509556051E1fF6D1C024
+Cometh Farm MUST/LUCHA  
+-Strategy : 0x6C57Bc7eEC2144Eb9ab6509556051E1fF6D1C024  
 -Vault : 0xE50bc19B7508fd4e0B5E6f9513bB9bfdD04339e3
 
 # Test the contracts
